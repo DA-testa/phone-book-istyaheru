@@ -4,7 +4,10 @@ import time
 
 class Query:
     def __init__(self, query):
-        if query[0].isnumeric():
+        if query.__len__() == 0 or query.__len__() == 1 or query.__len__() > 3:
+            self.type = 'invalid'
+            self.number = 0
+        elif query[0].isnumeric():
             self.type = 'invalid'
             self.number = 0
         elif query[1].isnumeric() == False:
